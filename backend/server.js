@@ -8,7 +8,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: "https://realtime-location-beta.vercel.app/", // Allow your frontend URL
+    origin: "https://realtime-location-beta.vercel.app", // Allow your frontend URL
     methods: ["GET", "POST"]
   }
 });
