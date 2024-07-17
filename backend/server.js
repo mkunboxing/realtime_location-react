@@ -16,7 +16,7 @@ const io = socketIo(server, {
 const port = process.env.PORT || 4000;
 
 app.use(cors({
-  origin: "https://realtime-location-beta.vercel.app/"
+  origin: "https://realtime-location-beta.vercel.app"
 }));
 
 io.on('connection', (socket) => {
