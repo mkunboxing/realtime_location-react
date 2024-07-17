@@ -1,12 +1,16 @@
-// src/customIcon.js
+// src/customDivIcon.js
 import L from 'leaflet';
-import customMarker from "./pointIcon.png";
 
-const customIcon = L.icon({
-  iconUrl: customMarker, // Replace with your custom icon URL
-  iconSize: [38, 38], // size of the icon
-  iconAnchor: [22, 38], // point of the icon which will correspond to marker's location
-  popupAnchor: [-3, -38] // point from which the popup should open relative to the iconAnchor
-});
+const createCustomDivIcon = (name) => {
+  return L.divIcon({
+    html: `<div class="custom-marker">
+             <span class="custom-marker-name">${name}</span>
+             <img src="${require('./pointIcon.png').default}" alt="marker" class="custom-marker-icon" />
+           </div>`,
+    iconSize: [38, 50], // adjust as needed
+    iconAnchor: [19, 50],
+    popupAnchor: [0, -40]
+  });
+};
 
-export default customIcon;
+export default createCustomDivIcon;
