@@ -5,7 +5,7 @@ import 'leaflet/dist/leaflet.css';
 import io from 'socket.io-client';
 import customIcon from './customIcon';
 
-const socket = io('https://realtime-location-react.onrender.com/');
+const socket = io(['https://realtime-location-react.onrender.com/', 'http://localhost:4000']);
 
 const MyMap = () => {
   const [locations, setLocations] = useState([]);
