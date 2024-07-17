@@ -6,7 +6,10 @@ const socketIo = require('socket.io');
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
-const port = process.env.PORT || 4000;
+const port = 4000;
+
+const cors = require('cors');
+app.use(cors());
 
 // Serve static files from the "public" directory
 app.use(express.static('public'));
